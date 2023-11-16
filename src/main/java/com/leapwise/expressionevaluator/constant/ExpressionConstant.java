@@ -2,8 +2,6 @@ package com.leapwise.expressionevaluator.constant;
 
 public class ExpressionConstant {
 
-    public static final String EXPRESSION_ALREADY_EXISTS_CAUSE = "ExpressionAlreadyExists";
-
     public static final String MESSAGE = "Message";
 
     public static final String STATUS = "Status";
@@ -28,7 +26,5 @@ public class ExpressionConstant {
     public static final String CLIENT_ID = "client_id";
     public static final String GRANT_TYPE = "grant_type";
     public static final String CLIENT_SECRET = "client_secret";
-
-
 
 }

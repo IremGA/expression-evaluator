@@ -1,7 +1,6 @@
 package com.leapwise.expressionevaluator.util;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.leapwise.expressionevaluator.constant.ExpressionConstant;
 import com.leapwise.expressionevaluator.exception.ExpressionException;
 import com.leapwise.expressionevaluator.stub.TokenResponse;
@@ -38,14 +37,12 @@ import java.util.stream.Collectors;
  */
 @Component("systemTokenStore")
 public class SystemTokenStore {
-    
-    @Value("${iam.url}")
-    private String iamURL;
+
 
     @Value("${iam.client.secret.path}")
     private String iamClientSecretPath;
 
-    
+
     @Value("${auth.enabled}")
     private boolean isAuthEnabled;
 
@@ -57,9 +54,9 @@ public class SystemTokenStore {
     private String accessToken = null;
     private String refreshToken = null;
     
-    private AtomicBoolean isTokenValid = new AtomicBoolean(true);
+    private final AtomicBoolean isTokenValid = new AtomicBoolean(true);
 
-    public static final Logger Expression_Logger = LoggerFactory.getLogger(SystemTokenStore.class);
+    private static final Logger Expression_Logger = LoggerFactory.getLogger(SystemTokenStore.class);
 
     @Retryable(value = {HttpClientErrorException.class}, maxAttempts = 3, backoff = @Backoff(200))
     public String getAccessToken(String username, String password, String grant_type, String client_id, String client_secret){
@@ -88,8 +85,6 @@ public class SystemTokenStore {
         map.put(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_FORM_URLENCODED_VALUE);
         map.put(HttpHeaders.ACCEPT, "application/vnd.dcp-v1+json");
         headers.setAll(map);
-
-        HttpEntity<?> request = new HttpEntity<>(tokenRequestBody, headers);
         
         Expression_Logger.info("Sending POST Request to fetch system access token");
         //This part is stubbed
@@ -110,7 +105,7 @@ public class SystemTokenStore {
         }
         Expression_Logger.debug("Converting access token response to HashMap");
         String jsonTokenResp = gson.toJson(tokenResponse);
-        ResponseEntity<String> response = new ResponseEntity(jsonTokenResp,HttpStatus.OK);
+        ResponseEntity<String> response = new ResponseEntity<>(jsonTokenResp,HttpStatus.OK);
         TokenResponse tokenResp = gson.fromJson(response.getBody(), TokenResponse.class);
 
         if(HttpStatus.OK == response.getStatusCode()){

@@ -77,18 +77,9 @@ public class SystemTokenStore {
     private void getAccessTokenFromIam(String username, String password, String grant_type, String client_id, String client_secret) {
         try{
         accessToken = null;
-        //restTemplate.getMessageConverters().add(new FormHttpMessageConverter());
-        MultiValueMap<String, String> tokenRequestBody = getRequestBody(username, password,grant_type,client_id, client_secret);
+        getRequestBody(username, password,grant_type,client_id, client_secret);
 
-        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-        Map<String,String> map = new HashMap<>();
-        map.put(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_FORM_URLENCODED_VALUE);
-        map.put(HttpHeaders.ACCEPT, "application/vnd.dcp-v1+json");
-        headers.setAll(map);
-        
         Expression_Logger.info("Sending POST Request to fetch system access token");
-        //This part is stubbed
-       // ResponseEntity<String> response = restTemplate.postForEntity(iamURL, request, String.class);
 
         TokenResponse tokenResponse = new TokenResponse();
         Gson gson = new Gson();

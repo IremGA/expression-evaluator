@@ -5,11 +5,11 @@ import com.leapwise.expressionevaluator.model.ExpressionIdentifier;
 import java.util.List;
 
 public interface ExpressionService {
-    public List getAllExpressions();
+    List<ExpressionIdentifier> getAllExpressions();
 
-    public ExpressionIdentifier getExpressionById(String expression_identifier_id);
+    ExpressionIdentifier getExpressionById(String expression_identifier_id);
 
-    public ExpressionIdentifier saveExpressionIdentifier(ExpressionIdentifier expressionIdentifier);
+    ExpressionIdentifier saveExpressionIdentifier(ExpressionIdentifier expressionIdentifier);
 
-    public void deleteExpressionIdentifier(String expression_identifier_id);
+    void deleteExpressionIdentifier(String expression_identifier_id);
 }

@@ -15,7 +15,7 @@ public class ResponseHandler {
         map.put(ExpressionConstant.STATUS, status.value());
         map.put(ExpressionConstant.DATA, responseObj);
 
-        return new ResponseEntity<Object>(map,status);
+        return new ResponseEntity<>(map,status);
     }
 
     public static ResponseEntity<Object> generateExceptionResponse(ErrorResponse errorResponse) {
@@ -24,6 +24,6 @@ public class ResponseHandler {
         map.put(ExpressionConstant.MESSAGE, errorResponse.getMessage());
         map.put(ExpressionConstant.REASON, errorResponse.getCause());
 
-        return new ResponseEntity<Object>(map,errorResponse.getStatus());
+        return new ResponseEntity<>(map,errorResponse.getStatus());
     }
 }

@@ -2,7 +2,6 @@ package com.leapwise.expressionevaluator.constant;
 
 public class ExpressionConstant {
 
-    public static final String EXPRESSION_ALREADY_EXISTS = "Expression Already Exists in DB";
     public static final String EXPRESSION_ALREADY_EXISTS_CAUSE = "ExpressionAlreadyExists";
 
     public static final String MESSAGE = "Message";
@@ -24,12 +23,6 @@ public class ExpressionConstant {
     public static final String EXPRESSION_NAME_ALREADY_EXISTS = "Expression Name already exists";
     public static final String EXPRESSION_NAME_ALREADY_EXISTS_CAUSE = "Expression Name already exists in DB. Please to save expression Try with another name";
 
-    public static final String REFRESH_TOKEN = "refresh_token";
-    public static final String ACCESS_TOKEN = "access_token";
-    public static final String ERROR_DESCRIPTION = "error_description";
-
-    public static final String HEADER_KEY_AUTH = "Authorization";
-    public static final String AUTH_SCHEME = "Bearer";
     public static final String IAM_USERNAME = "username";
     public static final String IAM_PASSWORD = "password";
     public static final String CLIENT_ID = "client_id";

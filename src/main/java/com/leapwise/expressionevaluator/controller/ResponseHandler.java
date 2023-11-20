@@ -17,6 +17,13 @@ public class ResponseHandler {
 
         return new ResponseEntity<>(map,status);
     }
+    public static ResponseEntity<Object> generateExpressionEvaluatorResponse(boolean result, HttpStatus status, Object responseObj) {
+        Map<String, Object> map = new HashMap<>();
+        map.put(ExpressionConstant.IS_EXPRESSION_VALID, result);
+        map.put(ExpressionConstant.EXPRESSION_RESULT, responseObj);
+
+        return new ResponseEntity<>(map,status);
+    }
 
     public static ResponseEntity<Object> generateExceptionResponse(ErrorResponse errorResponse) {
         Map<String, Object> map = new HashMap<>();

@@ -3,8 +3,8 @@ package com.leapwise.expressionevaluator.controller;
 import com.leapwise.expressionevaluator.constant.ExpressionConstant;
 import com.leapwise.expressionevaluator.exception.ErrorResponse;
 import com.leapwise.expressionevaluator.exception.ExpressionException;
-import com.leapwise.expressionevaluator.model.ExpressionIdentifier;
-import com.leapwise.expressionevaluator.service.ExpressionService;
+import com.leapwise.expressionevaluator.model.EvaluatorRequest;
+import com.leapwise.expressionevaluator.service.EvaluateService;
 import com.leapwise.expressionevaluator.util.SystemTokenStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,18 +20,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-public class ExpressionController {
+public class EvaluateController {
+
     @Autowired
-    ExpressionService expressionService;
+    EvaluateService evaluateService;
 
     @Autowired
     @Qualifier("systemTokenStore")
     private SystemTokenStore systemTokenStore;
 
-    private static final Logger Expression_Logger = LoggerFactory.getLogger(ExpressionController.class);
+    private static final Logger Evaluate_Logger = LoggerFactory.getLogger(EvaluateService.class);
 
-    @PostMapping("/expression")
-    public ResponseEntity createExpression(@RequestBody ExpressionIdentifier expressionIdentifier,@RequestHeader Map<String,String> headers) {
+    @PostMapping("/evaluate")
+    private ResponseEntity evaluateExpression(@RequestBody EvaluatorRequest evaluatorRequest, @RequestHeader Map<String,String> headers) {
         try{
 
 
@@ -42,23 +43,16 @@ public class ExpressionController {
             String client_secret = headers.get(ExpressionConstant.CLIENT_SECRET);
 
             String accessToken = systemTokenStore.getAccessToken(username, password, grant_type, client_id, client_secret);
-            Expression_Logger.info("Saving expression operation started");
-            ExpressionIdentifier expression = new ExpressionIdentifier();
+            Evaluate_Logger.info("Evaluating expression operation started");
+            boolean evaluationResult = false;
             if(accessToken != null){
-                expression= expressionService.saveExpressionIdentifier(expressionIdentifier);
-            }else{
-                ErrorResponse errorResponse = new ErrorResponse();
-                errorResponse.setStatus(HttpStatus.UNAUTHORIZED);
-                errorResponse.setCause(ExpressionConstant.UNAUTHORIZED_USER);
-                errorResponse.setCause(ExpressionConstant.UNAUTHORIZED_USER_MESSAGE);
-                errorResponse.setErrorCode(HttpStatus.UNAUTHORIZED.toString());
-                return ResponseHandler.generateExceptionResponse(errorResponse);
+                evaluationResult= evaluateService.evaluateExpression(evaluatorRequest.getName(), evaluatorRequest.getCustomer().toString());
             }
-            return ResponseHandler.generateResponse(ExpressionConstant.EXPRESSION_SUCCESSFULLY_CREATED, HttpStatus.CREATED, expression);
+            return ResponseHandler.generateExpressionEvaluatorResponse(evaluationResult, HttpStatus.OK, evaluatorRequest.getCustomer());
 
         } catch(ExpressionException expressionException){
 
-            Expression_Logger.info("ExpressionException thrown while saving expression");
+            Evaluate_Logger.info("ExpressionException thrown while evaluating expression : " + expressionException.getMessage());
             ErrorResponse errorResponse = new ErrorResponse();
             errorResponse.setErrorCode(expressionException.getCode());
             errorResponse.setMessage(expressionException.getMessage());
@@ -68,10 +62,10 @@ public class ExpressionController {
 
         }catch (Exception exception) {
 
-            Expression_Logger.info("Unknown Error thrown while saving expression");
+            Evaluate_Logger.info("Unknown Error thrown while evaluating expression : " + exception.getMessage());
             ErrorResponse errorResponse = new ErrorResponse();
             errorResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
-            errorResponse.setMessage(ExpressionConstant.ERROR_SAVING_EXPRESSION);
+            errorResponse.setMessage(ExpressionConstant.ERROR_EVALUATING_EXPRESSION);
             errorResponse.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.toString());
             errorResponse.setCause(exception.getMessage());
             return ResponseHandler.generateExceptionResponse(errorResponse);

@@ -20,5 +20,8 @@ Docker File has been created. To Run the container follow below commmands
 
 - To Run Docker image, go to docker desktop and run the image with filling out following option :
   ![image](https://github.com/IremGA/expression-evaluator/assets/21036082/6d973c8d-ab9a-46a5-aca2-553ee9f2a050)
- 
+
+- Then you can send requests defined in postman collection as in the sample screenshot:
+  ![image](https://github.com/IremGA/expression-evaluator/assets/21036082/c4a10b8a-9567-49c0-a036-4b9a3bae3c43)
+
 

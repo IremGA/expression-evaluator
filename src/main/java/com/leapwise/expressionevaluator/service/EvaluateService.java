@@ -1,10 +1,8 @@
 package com.leapwise.expressionevaluator.service;
 
-import com.leapwise.expressionevaluator.model.Customer;
-
-import java.io.IOException;
+import java.util.Map;
 
 public interface EvaluateService {
 
-    boolean evaluateExpression(String expression, String value) throws IOException;
+    boolean evaluateExpression(String expression, Map<String, Map<String, Object>> value, String evaluatedObjectName);
 }

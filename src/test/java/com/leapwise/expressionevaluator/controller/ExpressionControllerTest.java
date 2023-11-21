@@ -31,7 +31,6 @@ public class ExpressionControllerTest {
     @Mock
     private SystemTokenStore systemTokenStore;
 
-    private ObjectMapper objectMapper = new ObjectMapper();
     @Test
     public void testExpressionCreation(){
         // Arrange

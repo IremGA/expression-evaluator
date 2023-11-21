@@ -49,5 +49,9 @@ public class ExpressionConstant {
     public static final String UNAUTHORIZED_USER = "User is not Authorized for this operation";
     public static final String UNAUTHORIZED_USER_MESSAGE = "Invalid User Credentials for this Operation";
 
+    public static final String NAME = "name";
+
+    public static final String CUSTOMER = "customer";
+
 
 }

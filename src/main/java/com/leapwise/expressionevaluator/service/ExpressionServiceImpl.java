@@ -5,6 +5,7 @@ import com.leapwise.expressionevaluator.exception.ExpressionException;
 import com.leapwise.expressionevaluator.model.ExpressionIdentifier;
 import com.leapwise.expressionevaluator.repository.ExpressionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -17,13 +18,13 @@ public class ExpressionServiceImpl implements ExpressionService {
     @Autowired
     ExpressionRepository expressionRepository;
     @Override
+    @Cacheable(value = "yourListCache")
     public List<ExpressionIdentifier> getAllExpressions() {
         return new ArrayList<ExpressionIdentifier>(expressionRepository.findAll());
     }
 
     @Override
     public ExpressionIdentifier getExpressionById(String expression_identifier_id) {
-
         return expressionRepository.findById(expression_identifier_id).orElse(null);
     }
 
@@ -33,7 +34,7 @@ public class ExpressionServiceImpl implements ExpressionService {
         if(expressionIdentifier.getName() == null || expressionIdentifier.getName().isBlank()){
             throw new ExpressionException(HttpStatus.BAD_REQUEST.toString(), ExpressionConstant.MISSING_NAME, ExpressionConstant.MISSING_NAME_CAUSE, HttpStatus.BAD_REQUEST);
         }
-        ExpressionIdentifier expressionIdentifierGet = expressionRepository.findAll().stream().filter(expression->expressionIdentifier.getName().equals(expression.getName())).findAny().orElse(null);
+        ExpressionIdentifier expressionIdentifierGet = getAllExpressions().stream().filter(expression->expressionIdentifier.getName().equals(expression.getName())).findAny().orElse(null);
         if(expressionIdentifierGet != null){
             throw new ExpressionException(HttpStatus.BAD_REQUEST.toString(), ExpressionConstant.EXPRESSION_NAME_ALREADY_EXISTS, ExpressionConstant.EXPRESSION_NAME_ALREADY_EXISTS_CAUSE, HttpStatus.BAD_REQUEST);
         }
@@ -42,7 +43,6 @@ public class ExpressionServiceImpl implements ExpressionService {
 
     @Override
     public void deleteExpressionIdentifier(String expression_identifier_id) {
-
         expressionRepository.deleteById(expression_identifier_id);
     }
 }

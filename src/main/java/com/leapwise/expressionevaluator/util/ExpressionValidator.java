@@ -22,7 +22,7 @@ public class ExpressionValidator {
 
     private static final Logger Expression_Logger = LoggerFactory.getLogger(ExpressionValidator.class);
 
-    public <T> boolean validateLogicalExpression(String expression, T context) throws ExpressionException{
+    public static  <T>  boolean validateLogicalExpression(String expression, T context) throws ExpressionException{
         Expression_Logger.info("Validating Expression ");
         List<Boolean> booleanResultORList = new ArrayList<>();
         List<Boolean> booleanResultANDList = new ArrayList<>();
@@ -180,8 +180,6 @@ public class ExpressionValidator {
     }
 
     private static <T> boolean evaluateCondition(String condition, T context) throws ExpressionException {
-        // Implement your custom condition evaluation logic here
-        // For simplicity, assuming the condition is of the form "field == value"
         if (condition != null && !condition.isEmpty() && Character.isWhitespace(condition.charAt(0)))  {
             condition = condition.substring(1); // Omit the first character
         }

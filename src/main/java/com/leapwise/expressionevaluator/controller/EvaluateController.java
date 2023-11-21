@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
 public class EvaluateController {
-
     @Autowired
     EvaluateService evaluateService;
 
@@ -32,10 +32,8 @@ public class EvaluateController {
     private static final Logger Evaluate_Logger = LoggerFactory.getLogger(EvaluateService.class);
 
     @PostMapping("/evaluate")
-    private ResponseEntity evaluateExpression(@RequestBody EvaluatorRequest evaluatorRequest, @RequestHeader Map<String,String> headers) {
+    public ResponseEntity evaluateExpression(@RequestBody Map<String,Object> evaluatorRequest, @RequestHeader Map<String,String> headers) {
         try{
-
-
             String username = headers.get(ExpressionConstant.IAM_PASSWORD);
             String password = headers.get(ExpressionConstant.IAM_USERNAME);
             String grant_type = headers.get(ExpressionConstant.GRANT_TYPE);
@@ -45,10 +43,39 @@ public class EvaluateController {
             String accessToken = systemTokenStore.getAccessToken(username, password, grant_type, client_id, client_secret);
             Evaluate_Logger.info("Evaluating expression operation started");
             boolean evaluationResult = false;
-            if(accessToken != null){
-                evaluationResult= evaluateService.evaluateExpression(evaluatorRequest.getName(), evaluatorRequest.getCustomer().toString());
+
+            String expressionName = null;
+            Map<String, Map<String, Object>> value = null;
+            String evaluatedObjectName = null;
+            if(evaluatorRequest.size() == 2 ){
+                for (String key : evaluatorRequest.keySet()) {
+                    if(key.equals(ExpressionConstant.NAME)){
+                        expressionName = (String)evaluatorRequest.get(key);
+                    }else {
+                        evaluatedObjectName = key;
+                        value = (Map<String, Map<String, Object>>)evaluatorRequest.get(key);
+                    }
+                }
+            }else{
+                ErrorResponse errorResponse = new ErrorResponse();
+                errorResponse.setStatus(HttpStatus.BAD_REQUEST);
+                errorResponse.setCause(ExpressionConstant.JSON_IS_NOT_VALID_MESSAGE);
+                errorResponse.setCause(ExpressionConstant.JSON_IS_NOT_VALID_MESSAGE);
+                errorResponse.setErrorCode(HttpStatus.BAD_REQUEST.toString());
+                return ResponseHandler.generateExceptionResponse(errorResponse);
             }
-            return ResponseHandler.generateExpressionEvaluatorResponse(evaluationResult, HttpStatus.OK, evaluatorRequest.getCustomer());
+
+            if(accessToken != null){
+            evaluateService.evaluateExpression(expressionName, value, evaluatedObjectName);
+            }else {
+                ErrorResponse errorResponse = new ErrorResponse();
+                errorResponse.setStatus(HttpStatus.UNAUTHORIZED);
+                errorResponse.setCause(ExpressionConstant.UNAUTHORIZED_USER);
+                errorResponse.setCause(ExpressionConstant.UNAUTHORIZED_USER_MESSAGE);
+                errorResponse.setErrorCode(HttpStatus.UNAUTHORIZED.toString());
+                return ResponseHandler.generateExceptionResponse(errorResponse);
+            }
+            return ResponseHandler.generateExpressionEvaluatorResponse(evaluationResult, HttpStatus.OK, value);
 
         } catch(ExpressionException expressionException){
 

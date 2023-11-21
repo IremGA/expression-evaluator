@@ -63,9 +63,7 @@ public class ExpressionValidator {
                     switch (clause) {
                         case ExpressionConstant.LOGICAL_OR:
                             if(null != clauses_btw_o_c_parentheses.get(i+1) && !clauses_btw_o_c_parentheses.get(i+1).isEmpty()){
-                                // sb_expression.append(ExpressionConstant.LOGICAL_OR);
                                 sb_expression.append(clauses_btw_o_c_parentheses.get(i+1));
-                                //Function<T, Boolean> evaluator = buildEvaluatorOR(sb_expression.toString());
                                 Function<T, Boolean> evaluator = buildEvaluator(sb_expression.toString());
                                 booleanResultORList.add(evaluator.apply(context));
                                 sb_expression.setLength(0);
@@ -74,7 +72,6 @@ public class ExpressionValidator {
                             }
                         case ExpressionConstant.LOGICAL_AND:
                             if(null != clauses_btw_o_c_parentheses.get(i+1) && !clauses_btw_o_c_parentheses.get(i+1).isEmpty()){
-                                //sb_expression.append(ExpressionConstant.LOGICAL_AND);
                                 sb_expression.append(clauses_btw_o_c_parentheses.get(i+1));
                                 Function<T, Boolean> evaluator = buildEvaluator(sb_expression.toString());
                                 booleanResultANDList.add(evaluator.apply(context));

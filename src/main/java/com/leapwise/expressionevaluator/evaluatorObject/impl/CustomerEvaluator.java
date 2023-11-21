@@ -13,10 +13,9 @@ public class CustomerEvaluator implements Evaluator {
     @Override
     public boolean evaluateExpression(String expression, String value) {
 
-        Gson gson = new Gson();
+         Gson gson = new Gson();
         //Later can be more generic
         Object jsonObject = gson.fromJson(value, Customer.class);
-
-        return ExpressionValidator.validateLogicalExpression(value, jsonObject);
+        return ExpressionValidator.validateLogicalExpression(expression, jsonObject);
     }
 }

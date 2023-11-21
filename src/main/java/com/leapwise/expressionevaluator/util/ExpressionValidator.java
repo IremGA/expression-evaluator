@@ -22,7 +22,7 @@ public class ExpressionValidator {
 
     private static final Logger Expression_Logger = LoggerFactory.getLogger(ExpressionValidator.class);
 
-    public static  <T>  boolean validateLogicalExpression(String expression, T context) throws ExpressionException{
+    public static <T>  boolean validateLogicalExpression(String expression, T context) throws ExpressionException{
         Expression_Logger.info("Validating Expression ");
         List<Boolean> booleanResultORList = new ArrayList<>();
         List<Boolean> booleanResultANDList = new ArrayList<>();

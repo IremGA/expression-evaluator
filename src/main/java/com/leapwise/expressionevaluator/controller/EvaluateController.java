@@ -3,7 +3,6 @@ package com.leapwise.expressionevaluator.controller;
 import com.leapwise.expressionevaluator.constant.ExpressionConstant;
 import com.leapwise.expressionevaluator.exception.ErrorResponse;
 import com.leapwise.expressionevaluator.exception.ExpressionException;
-import com.leapwise.expressionevaluator.model.EvaluatorRequest;
 import com.leapwise.expressionevaluator.service.EvaluateService;
 import com.leapwise.expressionevaluator.util.SystemTokenStore;
 import org.slf4j.Logger;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -66,7 +64,7 @@ public class EvaluateController {
             }
 
             if(accessToken != null){
-            evaluateService.evaluateExpression(expressionName, value, evaluatedObjectName);
+                evaluationResult = evaluateService.evaluateExpression(expressionName, value, evaluatedObjectName);
             }else {
                 ErrorResponse errorResponse = new ErrorResponse();
                 errorResponse.setStatus(HttpStatus.UNAUTHORIZED);

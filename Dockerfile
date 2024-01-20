@@ -13,7 +13,7 @@ LABEL \
     org.opencontainers.image.title=expressionEvaluatorAPI \
     org.opencontainers.image.created=$BUILD_DATE \
     org.opencontainers.image.revision=$COMMIT \
-    org.opencontainers.image.vendor=Leapwise \
+    org.opencontainers.image.vendor=eaetirk \
     org.opencontainers.image.version=$APP_VERSION
 ADD --chown=122937 target/expression-evaluator-0.0.1-SNAPSHOT.jar expression-evaluator-0.0.1-SNAPSHOT.jar
 CMD java  -jar expression-evaluator-0.0.1-SNAPSHOT.jar

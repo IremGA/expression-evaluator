@@ -37,7 +37,7 @@
 					},
 					{
 						"key": "client_id",
-						"value": "leapwise",
+						"value": "eaetirk",
 						"type": "text"
 					},
 					{
@@ -61,14 +61,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/expression",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/expression",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"expression"
@@ -93,7 +93,7 @@
 							},
 							{
 								"key": "client_id",
-								"value": "leapwise",
+								"value": "eaetirk",
 								"type": "text"
 							},
 							{
@@ -117,14 +117,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/expression",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/expression",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"expression"
@@ -191,7 +191,7 @@
 					},
 					{
 						"key": "client_id",
-						"value": "leapwise",
+						"value": "eaetirk",
 						"type": "text"
 					},
 					{
@@ -215,14 +215,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/expression",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/expression",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"expression"
@@ -247,7 +247,7 @@
 							},
 							{
 								"key": "client_id",
-								"value": "leapwise",
+								"value": "eaetirk",
 								"type": "text"
 							},
 							{
@@ -271,14 +271,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/expression",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/expression",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"expression"
@@ -345,7 +345,7 @@
 					},
 					{
 						"key": "client_id",
-						"value": "leapwise",
+						"value": "eaetirk",
 						"type": "text"
 					},
 					{
@@ -369,14 +369,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/expression",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/expression",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"expression"
@@ -401,7 +401,7 @@
 							},
 							{
 								"key": "client_id",
-								"value": "leapwise",
+								"value": "eaetirk",
 								"type": "text"
 							},
 							{
@@ -425,14 +425,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/expression",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/expression",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"expression"
@@ -486,7 +486,7 @@
 					},
 					{
 						"key": "client_id",
-						"value": "leapwise",
+						"value": "eaetirk",
 						"type": "text"
 					},
 					{
@@ -510,14 +510,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"evaluate"
@@ -542,7 +542,7 @@
 							},
 							{
 								"key": "client_id",
-								"value": "leapwise",
+								"value": "eaetirk",
 								"type": "text"
 							},
 							{
@@ -566,14 +566,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"evaluate"
@@ -627,7 +627,7 @@
 					},
 					{
 						"key": "client_id",
-						"value": "leapwise",
+						"value": "eaetirk",
 						"type": "text"
 					},
 					{
@@ -651,14 +651,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"evaluate"
@@ -683,7 +683,7 @@
 							},
 							{
 								"key": "client_id",
-								"value": "leapwise",
+								"value": "eaetirk",
 								"type": "text"
 							},
 							{
@@ -707,14 +707,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"evaluate"
@@ -768,7 +768,7 @@
 					},
 					{
 						"key": "client_id",
-						"value": "leapwise",
+						"value": "eaetirk",
 						"type": "text"
 					},
 					{
@@ -792,14 +792,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"evaluate"
@@ -824,7 +824,7 @@
 							},
 							{
 								"key": "client_id",
-								"value": "leapwise",
+								"value": "eaetirk",
 								"type": "text"
 							},
 							{
@@ -848,14 +848,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"evaluate"
@@ -909,7 +909,7 @@
 					},
 					{
 						"key": "client_id",
-						"value": "leapwise",
+						"value": "eaetirk",
 						"type": "text"
 					},
 					{
@@ -933,14 +933,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"evaluate"
@@ -965,7 +965,7 @@
 							},
 							{
 								"key": "client_id",
-								"value": "leapwise",
+								"value": "eaetirk",
 								"type": "text"
 							},
 							{
@@ -989,14 +989,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"evaluate"
@@ -1050,7 +1050,7 @@
 					},
 					{
 						"key": "client_id",
-						"value": "leapwise",
+						"value": "eaetirk",
 						"type": "text"
 					},
 					{
@@ -1074,14 +1074,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"evaluate"
@@ -1106,7 +1106,7 @@
 							},
 							{
 								"key": "client_id",
-								"value": "leapwise",
+								"value": "eaetirk",
 								"type": "text"
 							},
 							{
@@ -1130,14 +1130,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/evaluate",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/evaluate",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"evaluate"
@@ -1176,14 +1176,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/actuator",
+					"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/actuator",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"leapwise",
+						"eaetirk",
 						"expressionEvaluator",
 						"v1",
 						"actuator"
@@ -1197,14 +1197,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/leapwise/expressionEvaluator/v1/actuator",
+							"raw": "http://localhost:8080/eaetirk/expressionEvaluator/v1/actuator",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"leapwise",
+								"eaetirk",
 								"expressionEvaluator",
 								"v1",
 								"actuator"
@@ -1237,7 +1237,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/leapwise/expressionEvaluator/v1/actuator\",\n            \"templated\": false\n        },\n        \"health\": {\n            \"href\": \"http://localhost:8080/leapwise/expressionEvaluator/v1/actuator/health\",\n            \"templated\": false\n        },\n        \"health-path\": {\n            \"href\": \"http://localhost:8080/leapwise/expressionEvaluator/v1/actuator/health/{*path}\",\n            \"templated\": true\n        },\n        \"info\": {\n            \"href\": \"http://localhost:8080/leapwise/expressionEvaluator/v1/actuator/info\",\n            \"templated\": false\n        },\n        \"prometheus\": {\n            \"href\": \"http://localhost:8080/leapwise/expressionEvaluator/v1/actuator/prometheus\",\n            \"templated\": false\n        },\n        \"mappings\": {\n            \"href\": \"http://localhost:8080/leapwise/expressionEvaluator/v1/actuator/mappings\",\n            \"templated\": false\n        }\n    }\n}"
+					"body": "{\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/eaetirk/expressionEvaluator/v1/actuator\",\n            \"templated\": false\n        },\n        \"health\": {\n            \"href\": \"http://localhost:8080/eaetirk/expressionEvaluator/v1/actuator/health\",\n            \"templated\": false\n        },\n        \"health-path\": {\n            \"href\": \"http://localhost:8080/eaetirk/expressionEvaluator/v1/actuator/health/{*path}\",\n            \"templated\": true\n        },\n        \"info\": {\n            \"href\": \"http://localhost:8080/eaetirk/expressionEvaluator/v1/actuator/info\",\n            \"templated\": false\n        },\n        \"prometheus\": {\n            \"href\": \"http://localhost:8080/eaetirk/expressionEvaluator/v1/actuator/prometheus\",\n            \"templated\": false\n        },\n        \"mappings\": {\n            \"href\": \"http://localhost:8080/eaetirk/expressionEvaluator/v1/actuator/mappings\",\n            \"templated\": false\n        }\n    }\n}"
 				}
 			]
 		}
